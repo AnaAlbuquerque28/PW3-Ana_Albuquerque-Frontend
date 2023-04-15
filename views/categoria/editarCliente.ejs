@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs') %>
+
+<body>
+
+    <div class="container">
+
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3>EDITAR CLIENTE</h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <form action="/alterarCliente" method="post">
+
+                    <label for="nome_cliente"></label>
+                    <input 
+                    type="text" 
+                    name="nome_cliente" id="idCliente"
+                    value="<%= cliente.data.nome_cliente %>">
+
+                    <input 
+                    type="hidden" 
+                    name="idCliente" 
+                    value="<%= cliente.data.idCliente %>">
+
+                    <button class="btn btn-success mt-2">EDITAR</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<%- include('../partials/footer.ejs') %>
+
+</html>

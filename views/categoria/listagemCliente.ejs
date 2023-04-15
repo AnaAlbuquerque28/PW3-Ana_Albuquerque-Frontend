@@ -1,0 +1,31 @@
+<%- include('../partials/header.ejs')%>
+
+<div class="container">
+
+    <%- include('../partials/menu.ejs')%>
+
+    <div class="card">
+        <div class="card-header">LISTAGEM DE CLIENTES</div>
+    </div>
+
+    <%
+    clientes.data.forEach(clientes=>{
+    %>
+
+      <div class="card mt-2 p-1">
+
+        <div class="card-body">
+            <%= clientes.nome_cliente %>
+        </div>
+
+        <div class="btn-group mr-2">
+            <a href="/alterarCliente/<%= clientes.idCliente%>" class="btn btn-success btn-sm mr-2 ml-2">EDITAR</a>
+            <a href="/excluirCliente/<%= clientes.idCliente%>" class="btn btn-danger btn-sm mr-2 ml-2">EXCLUIR</a>
+        </div>
+
+      </div>
+        
+
+<% }) %>
+
+</div>
